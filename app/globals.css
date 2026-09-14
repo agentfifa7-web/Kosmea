@@ -1,0 +1,231 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: var(--font-kosmea-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-kosmea-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-obsidian: var(--obsidian);
+  --color-obsidian-foreground: var(--obsidian-foreground);
+  --color-champagne: var(--champagne);
+  --color-champagne-foreground: var(--champagne-foreground);
+  --color-nude: var(--nude);
+  --color-nude-foreground: var(--nude-foreground);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-foreground: var(--terracotta-foreground);
+  --color-plum: var(--plum);
+  --color-plum-foreground: var(--plum-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+  KÔSMÉA — identité visuelle : luxe africain contemporain
+  Obsidian (noir profond) — primaire, texte, boutons principaux
+  Ivory / Cream (fond) — respiration, espace blanc premium
+  Champagne (gold doux) — accents de luxe, utilisés avec parcimonie
+  Terracotta / Nude — accent chaleureux, CTA secondaires
+  Plum (prune profond) — accent secondaire, Privilège / VIP
+  Pas de dégradés excessifs, pas d'or partout : sophistication avant tout.
+*/
+:root {
+  color-scheme: light;
+  --background: oklch(0.9720 0.0110 85);
+  --foreground: oklch(0.1700 0.0050 40);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1700 0.0050 40);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1700 0.0050 40);
+  --primary: oklch(0.1700 0.0050 40);
+  --primary-foreground: oklch(0.9720 0.0110 85);
+  --secondary: oklch(0.9350 0.0180 75);
+  --secondary-foreground: oklch(0.1700 0.0050 40);
+  --muted: oklch(0.9350 0.0180 75);
+  --muted-foreground: oklch(0.4600 0.0250 50);
+  --accent: oklch(0.5750 0.0950 40);
+  --accent-foreground: oklch(0.9800 0.0080 85);
+  --destructive: oklch(0.5050 0.2000 27.5);
+  --border: oklch(0.8900 0.0180 70);
+  --input: oklch(0.8900 0.0180 70);
+  --ring: oklch(0.1700 0.0050 40 / 35%);
+  --obsidian: oklch(0.1700 0.0050 40);
+  --obsidian-foreground: oklch(0.9720 0.0110 85);
+  --champagne: oklch(0.8250 0.0620 85);
+  --champagne-foreground: oklch(0.1700 0.0050 40);
+  --nude: oklch(0.8150 0.0480 45);
+  --nude-foreground: oklch(0.1700 0.0050 40);
+  --terracotta: oklch(0.5750 0.0950 40);
+  --terracotta-foreground: oklch(0.9800 0.0080 85);
+  --plum: oklch(0.2450 0.0700 335);
+  --plum-foreground: oklch(0.9500 0.0180 85);
+  --chart-1: oklch(0.5750 0.0950 40);
+  --chart-2: oklch(0.1700 0.0050 40);
+  --chart-3: oklch(0.8250 0.0620 85);
+  --chart-4: oklch(0.2450 0.0700 335);
+  --chart-5: oklch(0.8150 0.0480 45);
+  --radius: 0.65rem;
+  --sidebar: oklch(0.1700 0.0050 40);
+  --sidebar-foreground: oklch(0.9600 0.0060 85);
+  --sidebar-primary: oklch(0.5750 0.0950 40);
+  --sidebar-primary-foreground: oklch(0.9800 0.0080 85);
+  --sidebar-accent: oklch(0.2400 0.0100 40);
+  --sidebar-accent-foreground: oklch(0.9600 0.0060 85);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.5750 0.0950 40 / 45%);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.1550 0.0080 40);
+  --foreground: oklch(0.9700 0.0060 85);
+  --card: oklch(0.2050 0.0090 40);
+  --card-foreground: oklch(0.9700 0.0060 85);
+  --popover: oklch(0.2050 0.0090 40);
+  --popover-foreground: oklch(0.9700 0.0060 85);
+  --primary: oklch(0.9200 0.0180 85);
+  --primary-foreground: oklch(0.1700 0.0050 40);
+  --secondary: oklch(0.2650 0.0100 40);
+  --secondary-foreground: oklch(0.9700 0.0060 85);
+  --muted: oklch(0.2650 0.0100 40);
+  --muted-foreground: oklch(0.6800 0.0200 60);
+  --accent: oklch(0.6500 0.1000 40);
+  --accent-foreground: oklch(0.1500 0.0080 40);
+  --destructive: oklch(0.6400 0.2000 27.5);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.6500 0.1000 40 / 45%);
+  --obsidian: oklch(0.1000 0.0040 40);
+  --obsidian-foreground: oklch(0.9700 0.0060 85);
+  --champagne: oklch(0.8250 0.0620 85);
+  --champagne-foreground: oklch(0.1700 0.0050 40);
+  --nude: oklch(0.7200 0.0450 45);
+  --nude-foreground: oklch(0.1500 0.0080 40);
+  --terracotta: oklch(0.6500 0.1000 40);
+  --terracotta-foreground: oklch(0.1500 0.0080 40);
+  --plum: oklch(0.3300 0.0850 335);
+  --plum-foreground: oklch(0.9500 0.0180 85);
+  --chart-1: oklch(0.6500 0.1000 40);
+  --chart-2: oklch(0.9200 0.0180 85);
+  --chart-3: oklch(0.8250 0.0620 85);
+  --chart-4: oklch(0.5800 0.0100 50);
+  --chart-5: oklch(0.4000 0.0080 60);
+  --sidebar: oklch(0.1200 0.0060 40);
+  --sidebar-foreground: oklch(0.9600 0.0060 85);
+  --sidebar-primary: oklch(0.6500 0.1000 40);
+  --sidebar-primary-foreground: oklch(0.1500 0.0080 40);
+  --sidebar-accent: oklch(0.2000 0.0090 40);
+  --sidebar-accent-foreground: oklch(0.9600 0.0060 85);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.6500 0.1000 40 / 45%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .reveal {
+    animation: kosmea-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes kosmea-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kosmea-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-kosmea-marquee {
+  animation: kosmea-marquee 28s linear infinite;
+}
+
+@keyframes kosmea-shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+.animate-kosmea-shimmer {
+  background-image: linear-gradient(110deg, var(--muted) 8%, var(--card) 18%, var(--muted) 33%);
+  background-size: 200% 100%;
+  animation: kosmea-shimmer 1.6s linear infinite;
+}
+
+/* Carte interactive (Leaflet) — habillage aux couleurs KÔSMÉA */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--muted);
+}
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(20, 15, 10, 0.22);
+}
+.leaflet-popup-content {
+  margin: 14px 16px;
+}
+.leaflet-popup-tip {
+  box-shadow: 0 4px 10px rgba(20, 15, 10, 0.1);
+}
+.leaflet-control-zoom a {
+  border-radius: var(--radius-md) !important;
+  color: var(--foreground) !important;
+}
